@@ -9,8 +9,8 @@ import React from 'react';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Yoann TERUEL - Frontend developer',
-  description: "Yoann TERUEL's personal website",
+  title: 'Yoann Teruel - Frontend developer',
+  description: "Yoann Teruel's Portfolio website",
 };
 
 export default function RootLayout({

@@ -2,6 +2,7 @@ import styles from './AboutMe.module.css';
 import Section from '@/components/Section/Section';
 import Image from 'next/image';
 import portraitImage from '../../../public/portrait.webp';
+import { Fira_Code } from 'next/font/google';
 import {
   CSharpIcon,
   GitIcon,
@@ -12,6 +13,9 @@ import {
   TypescriptIcon,
 } from '@/components/Icons';
 import StyledComponents from '@/components/Icons/StyledComponents';
+import { clsx } from 'clsx';
+
+const firaCode = Fira_Code({ subsets: ['latin'] });
 
 const AboutMe = () => {
   return (
@@ -45,7 +49,7 @@ const AboutMe = () => {
                 plan, test, and create user interfaces.
               </p>
               <p>
-                I am currently open to job opportunities where I can
+                I am currently open to job opportunities where I can{' '}
                 <i>contribute, learn, and grow</i> as a software developer and
                 as a person. If you believe that I am a developer that will mesh
                 well with your team and goals, please feel free to contact me!
@@ -53,7 +57,12 @@ const AboutMe = () => {
             </div>
             <div className={styles.aboutMe__content__skills}>
               <h3>My skills</h3>
-              <ul className={styles.aboutMe__content__skills__list}>
+              <ul
+                className={clsx(
+                  styles.aboutMe__content__skills__list,
+                  firaCode.className,
+                )}
+              >
                 <li>
                   JavaScript
                   <JavascriptIcon />

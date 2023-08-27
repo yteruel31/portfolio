@@ -50,6 +50,10 @@
   margin-bottom: 20px;
 }
 
+.aboutMe__content__text > p > i {
+  color: var(--c-primary-light);
+}
+
 .aboutMe__content__text > p:last-child {
   margin-bottom: 24px;
 }
