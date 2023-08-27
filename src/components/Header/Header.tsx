@@ -8,6 +8,7 @@ const Header = () => {
         <div className={styles.container}>
           <div className={styles.title}>
             <a>Yoann TERUEL</a>
+            <span>Work in progress</span>
           </div>
           <div className={styles.content}>
             <nav className={styles.navbarMenu}>
