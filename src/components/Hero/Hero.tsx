@@ -10,7 +10,7 @@ const Hero = () => {
       <Section threshold={0.35}>
         <div className={styles.container}>
           <div className={styles.hero__content}>
-            <p className={styles.hero__content__intro}>Hi! I&#39;m...</p>
+            <p className={styles.hero__content__intro}>Hi 👋 I&#39;m...</p>
             <h1 className={clsx(styles.hero__content__title)}>
               <span className={styles.hero__content__title__name}>
                 Yoann Teruel
