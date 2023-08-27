@@ -1,12 +1,16 @@
 import React from 'react';
 import styles from './Button.module.css';
 
-interface ButtonProps {
+interface ButtonProps extends React.ComponentPropsWithoutRef<'a'> {
   children: React.ReactNode;
 }
 
-const Button = ({ children }: ButtonProps) => {
-  return <a className={styles.button}>{children}</a>;
+const Button = ({ children, ...rest }: ButtonProps) => {
+  return (
+    <a {...rest} className={styles.button}>
+      {children}
+    </a>
+  );
 };
 
 export default Button;

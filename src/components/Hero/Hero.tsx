@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <div className={styles.hero}>
       <Section threshold={0.35}>
-        <div className={styles.container}>
+        <section className={styles.container}>
           <div className={styles.hero__content}>
             <p className={styles.hero__content__intro}>Hi 👋 I&#39;m...</p>
             <h1 className={clsx(styles.hero__content__title)}>
@@ -28,10 +28,10 @@ const Hero = () => {
               popular libraries and frameworks such as React & Next.js.
             </p>
             <div className={styles.hero__content__buttons}>
-              <Button>About me</Button>
+              <Button href="#about-me">About me</Button>
             </div>
           </div>
-        </div>
+        </section>
       </Section>
     </div>
   );

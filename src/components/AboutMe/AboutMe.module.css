@@ -1,0 +1,106 @@
+.aboutMe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.aboutMe__container {
+  display: flex;
+  flex-direction: column;
+  max-width: calc(var(--layout-max-width) - 64px);
+}
+
+.aboutMe__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.aboutMe__title > h2 {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 56px;
+}
+
+.aboutMe__content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-areas: 'text image' 'skills image';
+}
+
+.aboutMe__content h3 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+  color: var(--c-primary-light);
+  margin-bottom: 16px;
+}
+
+.aboutMe__content__text {
+  grid-area: text;
+}
+
+.aboutMe__content__text > p {
+  font-size: 18px;
+  color: var(--c-foreground-1);
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+
+.aboutMe__content__text > p:last-child {
+  margin-bottom: 24px;
+}
+
+.aboutMe__content__skills {
+  grid-area: skills;
+}
+
+.aboutMe__content__skills__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.aboutMe__content__skills__list > li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--c-foreground-1);
+}
+
+.aboutMe__content__skills__list svg {
+  color: var(--c-primary);
+}
+
+.aboutMe__content__image {
+  grid-area: image;
+  position: relative;
+  margin: auto;
+}
+
+.aboutMe__content__image::before {
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 transparent;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  content: '';
+  transition: box-shadow 0.3s;
+}
+
+.aboutMe__content__image:hover:before {
+  box-shadow: 0 0 200px 5px var(--c-primary);
+}
+
+.aboutMe__content__image img {
+  border-radius: 50%;
+  margin: 0;
+  height: 100%;
+}

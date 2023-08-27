@@ -11,7 +11,7 @@ const Header = () => {
           </div>
           <div className={styles.content}>
             <nav className={styles.navbarMenu}>
-              <a>About me</a>
+              <a href="#about-me">About me</a>
               <a>Projects</a>
               <a>Blog</a>
               <a>Resume</a>
