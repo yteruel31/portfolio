@@ -1,0 +1,11 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  padding-top: var(--navbar-height);
+  flex-grow: 1;
+  flex-shrink: 0;
+}

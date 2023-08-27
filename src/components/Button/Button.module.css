@@ -1,0 +1,17 @@
+.button {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 36px;
+  border-radius: 20px;
+  user-select: none;
+  padding: 0 20px;
+  background-color: var(--c-primary);
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--c-primary-light);
+}
