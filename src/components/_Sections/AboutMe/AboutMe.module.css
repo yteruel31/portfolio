@@ -6,25 +6,6 @@
   height: 100%;
 }
 
-.aboutMe__container {
-  display: flex;
-  flex-direction: column;
-  max-width: calc(var(--layout-max-width) - 64px);
-}
-
-.aboutMe__title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 48px;
-}
-
-.aboutMe__title > h2 {
-  font-size: 48px;
-  font-weight: 500;
-  line-height: 56px;
-}
-
 .aboutMe__content {
   display: grid;
   grid-template-columns: 1.2fr 1fr;

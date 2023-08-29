@@ -7,7 +7,7 @@ import Button from '@/components/Button/Button';
 const Hero = () => {
   return (
     <div className={styles.hero}>
-      <Section threshold={0.35}>
+      <Section threshold={0.35} container={false}>
         <section className={styles.container}>
           <div className={styles.hero__content}>
             <p className={styles.hero__content__intro}>Hi 👋 I&#39;m...</p>

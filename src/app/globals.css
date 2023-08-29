@@ -15,6 +15,8 @@
   --c-foreground-1: #000000;
   --c-foreground-2: #525259;
   --c-background: 255, 255, 255;
+  --c-background-soft: #252529;
+  --c-background-softer: #323238;
   --c-divider: #52525951;
   --c-primary: #e05252;
   --c-primary-light: #e56d6d;
