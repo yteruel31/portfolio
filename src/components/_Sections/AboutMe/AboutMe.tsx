@@ -24,6 +24,14 @@ const AboutMe = () => {
       <Section threshold={0.35} id="about-me">
         <Title>About Me</Title>
         <div className={styles.aboutMe__content}>
+          <div className={styles.aboutMe__content__image}>
+            <Image
+              src={portraitImage}
+              alt="image of Yoann Teruel"
+              width={450}
+              height={450}
+            />
+          </div>
           <div className={styles.aboutMe__content__text}>
             <h3>My background</h3>
             <p>
@@ -94,14 +102,6 @@ const AboutMe = () => {
                 <GitIcon />
               </li>
             </ul>
-          </div>
-          <div className={styles.aboutMe__content__image}>
-            <Image
-              src={portraitImage}
-              alt="image of Yoann Teruel"
-              width={450}
-              height={450}
-            />
           </div>
         </div>
       </Section>
