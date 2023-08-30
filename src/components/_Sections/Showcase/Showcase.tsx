@@ -12,7 +12,6 @@ interface ShowcaseProps {
 }
 
 const Showcase = ({ projects }: ShowcaseProps) => {
-  console.log(projects);
   return (
     <div className={styles.showcase}>
       <Section threshold={0.35} id="showcase">
@@ -23,7 +22,7 @@ const Showcase = ({ projects }: ShowcaseProps) => {
             .map((project) => (
               <div key={project.name} className={styles.project__card}>
                 <article className={styles.project__card__content}>
-                  <div>
+                  <div className={styles.project__card__content__img}>
                     <DatoImage data={project.images[0].responsiveImage} />
                   </div>
                   <div className={styles.project__card__content__text}>
