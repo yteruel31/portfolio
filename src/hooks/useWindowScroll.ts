@@ -30,10 +30,12 @@ function scrollTo({ x, y }: Partial<ScrollPosition>) {
 export function useWindowScroll() {
   const [position, setPosition] = useState<ScrollPosition>({ x: 0, y: 0 });
 
-  if (typeof window !== 'undefined') {
-    window.addEventListener('scroll', () => setPosition(getScrollPosition()));
-    window.addEventListener('resize', () => setPosition(getScrollPosition()));
-  }
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', () => setPosition(getScrollPosition()));
+      window.addEventListener('resize', () => setPosition(getScrollPosition()));
+    }
+  }, []);
 
   useEffect(() => {
     setPosition(getScrollPosition());
