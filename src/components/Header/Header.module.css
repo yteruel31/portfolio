@@ -5,12 +5,21 @@
   width: 100%;
   z-index: var(--navbar-z-index);
   pointer-events: none;
-  transition: background-color 0.5s;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.5s,
+    border-bottom-color 0.5s;
+}
+
+.header__scrolling {
+  background-color: var(--c-background);
+  border-bottom-color: var(--c-gutter);
 }
 
 .navbar {
   position: relative;
-  border-bottom: 1px solid transparent;
+
   height: var(--navbar-height);
   padding: 0 32px;
   pointer-events: none;
