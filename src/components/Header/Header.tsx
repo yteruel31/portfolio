@@ -24,7 +24,8 @@ const Header = () => {
           <div className={styles.content}>
             <nav className={styles.navbarMenu}>
               <a href="#about-me">About me</a>
-              <a>Projects</a>
+              <a href="#showcase">Showcase</a>
+              <a>Other projects</a>
               <a>Blog</a>
               <a>Resume</a>
             </nav>
