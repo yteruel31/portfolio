@@ -11,6 +11,9 @@
   --navbar-height: 64px;
   --navbar-z-index: 20;
 
+  /* Footer */
+  --footer-z-index: 60;
+
   /* Colors */
   --c-foreground-1: #000000;
   --c-foreground-2: #525259;
