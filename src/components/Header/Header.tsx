@@ -1,7 +1,8 @@
 'use client';
 
 import styles from './Header.module.css';
-import { BurgerIcon, GithubIcon, LinkedInIcon } from '@/components/Icons';
+import { GithubIcon, LinkedInIcon } from '@/components/Icons';
+import { Transition } from 'react-transition-group';
 import { useWindowScroll } from '@/hooks/useWindowScroll';
 import { clsx } from 'clsx';
 import { useState } from 'react';
@@ -31,7 +32,26 @@ const Header = () => {
                     className={styles.burger}
                     onClick={() => setMenuIsOpen(!menuIsOpen)}
                   >
-                    <BurgerIcon />
+                    <span className={styles.burger__container}>
+                      <span
+                        className={clsx(
+                          styles.burger__top,
+                          menuIsOpen && styles.burger__top__active,
+                        )}
+                      ></span>
+                      <span
+                        className={clsx(
+                          styles.burger__middle,
+                          menuIsOpen && styles.burger__middle__active,
+                        )}
+                      ></span>
+                      <span
+                        className={clsx(
+                          styles.burger__bottom,
+                          menuIsOpen && styles.burger__bottom__active,
+                        )}
+                      ></span>
+                    </span>
                   </button>
                 ) : (
                   <>
@@ -63,38 +83,48 @@ const Header = () => {
               </div>
             </div>
           </div>
-          {menuIsOpen && (
-            <div className={styles.naveScreen}>
-              <div className={styles.naveScreen__container}>
-                <nav className={styles.naveScreen__container__menu}>
-                  <a href="#about-me" onClick={() => setMenuIsOpen(false)}>
-                    About me
-                  </a>
-                  <a href="#showcase" onClick={() => setMenuIsOpen(false)}>
-                    Showcase
-                  </a>
-                  <a onClick={() => setMenuIsOpen(false)}>Other projects</a>
-                  <a onClick={() => setMenuIsOpen(false)}>Blog</a>
-                </nav>
-                <div className={styles.socialLinks}>
-                  <a
-                    href="https://github.com/yteruel31"
-                    target="_blank"
-                    aria-label="visit my github profile"
-                  >
-                    <GithubIcon />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/yoann-teruel"
-                    target="_blank"
-                    aria-label="visit my linkedin profile"
-                  >
-                    <LinkedInIcon />
-                  </a>
+          <Transition in={menuIsOpen} timeout={150}>
+            {(state) => (
+              <div
+                className={clsx(
+                  styles.naveScreen,
+                  (state == 'entering' || state === 'entered') &&
+                    styles.naveScreen__open,
+                  (state == 'exiting' || state === 'exited') &&
+                    styles.naveScreen__close,
+                )}
+              >
+                <div className={styles.naveScreen__container}>
+                  <nav className={styles.naveScreen__container__menu}>
+                    <a href="#about-me" onClick={() => setMenuIsOpen(false)}>
+                      About me
+                    </a>
+                    <a href="#showcase" onClick={() => setMenuIsOpen(false)}>
+                      Showcase
+                    </a>
+                    <a onClick={() => setMenuIsOpen(false)}>Other projects</a>
+                    <a onClick={() => setMenuIsOpen(false)}>Blog</a>
+                  </nav>
+                  <div className={styles.socialLinks}>
+                    <a
+                      href="https://github.com/yteruel31"
+                      target="_blank"
+                      aria-label="visit my github profile"
+                    >
+                      <GithubIcon />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/yoann-teruel"
+                      target="_blank"
+                      aria-label="visit my linkedin profile"
+                    >
+                      <LinkedInIcon />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
+          </Transition>
         </header>
       )}
     </Device>

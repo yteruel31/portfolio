@@ -19,9 +19,8 @@
 
 .navbar {
   position: relative;
-
   height: var(--navbar-height);
-  padding: 0 32px;
+  padding: 0 16px 0 32px;
   pointer-events: none;
   white-space: nowrap;
 }
@@ -93,10 +92,65 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  background-color: transparent;
   border: none;
-  color: var(--c-foreground-1);
+  background-color: transparent;
+  width: 48px;
+}
+
+.burger__container {
+  position: relative;
+  width: 16px;
+  height: 14px;
+  overflow: hidden;
+}
+
+.burger__top,
+.burger__middle,
+.burger__bottom {
+  position: absolute;
+  background-color: var(--c-foreground-1);
+  width: 16px;
+  height: 2px;
+  transform: translate(4px);
+  top: 0;
+  left: 0;
+  transition:
+    top 0.25s,
+    background-color 0.5s,
+    transform 0.25s;
+}
+
+.burger__top {
+  transform: translate(4px);
+  top: 0;
+  left: 0;
+}
+
+.burger__top__active {
+  top: 6px;
+  transform: translate(0) rotate(225deg);
+}
+
+.burger__middle {
+  transform: translate(0);
+  top: 6px;
+  left: 0;
+}
+
+.burger__middle__active {
+  top: 6px;
+  transform: translate(16px);
+}
+
+.burger__bottom {
+  transform: translate(8px);
+  top: 12px;
+  left: 0;
+}
+
+.burger__bottom__active {
+  top: 6px;
+  transform: translate(0) rotate(135deg);
 }
 
 .naveScreen {
@@ -109,6 +163,16 @@
   overflow-y: auto;
   z-index: var(--navbar-z-index);
   pointer-events: auto;
+  transition-property: opacity;
+  transition-duration: 150ms;
+}
+
+.naveScreen__open {
+  opacity: 1;
+}
+
+.naveScreen__close {
+  opacity: 0;
 }
 
 .naveScreen__container {
@@ -146,5 +210,9 @@
     width: 1px;
     height: 24px;
     background-color: var(--c-divider);
+  }
+
+  .navbar {
+    padding: 0 32px;
   }
 }
