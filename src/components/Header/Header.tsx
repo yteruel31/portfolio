@@ -58,8 +58,6 @@ const Header = () => {
                     <nav className={styles.navbarMenu}>
                       <a href="#about-me">About me</a>
                       <a href="#showcase">Showcase</a>
-                      <a>Other projects</a>
-                      <a>Blog</a>
                       <a>Resume</a>
                     </nav>
                     <div className={styles.socialLinks}>
@@ -102,8 +100,6 @@ const Header = () => {
                     <a href="#showcase" onClick={() => setMenuIsOpen(false)}>
                       Showcase
                     </a>
-                    <a onClick={() => setMenuIsOpen(false)}>Other projects</a>
-                    <a onClick={() => setMenuIsOpen(false)}>Blog</a>
                   </nav>
                   <div className={styles.socialLinks}>
                     <a
