@@ -5,13 +5,12 @@ interface ScrollPosition {
   y: number;
 }
 
-function getScrollPosition(): ScrollPosition {
-  return typeof window !== 'undefined'
+const getScrollPosition = (): ScrollPosition =>
+  typeof window !== 'undefined'
     ? { x: window.pageXOffset, y: window.pageYOffset }
     : { x: 0, y: 0 };
-}
 
-function scrollTo({ x, y }: Partial<ScrollPosition>) {
+const scrollTo = ({ x, y }: Partial<ScrollPosition>) => {
   if (typeof window !== 'undefined') {
     const scrollOptions: ScrollToOptions = { behavior: 'smooth' };
 
@@ -25,9 +24,9 @@ function scrollTo({ x, y }: Partial<ScrollPosition>) {
 
     window.scrollTo(scrollOptions);
   }
-}
+};
 
-export function useWindowScroll() {
+export const useWindowScroll = () => {
   const [position, setPosition] = useState<ScrollPosition>({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -42,4 +41,4 @@ export function useWindowScroll() {
   }, []);
 
   return [position, scrollTo] as const;
-}
+};

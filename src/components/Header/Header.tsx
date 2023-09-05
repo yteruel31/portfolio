@@ -1,12 +1,16 @@
 'use client';
 
 import styles from './Header.module.css';
-import { GithubIcon, LinkedInIcon } from '@/components/Icons';
+import { BurgerIcon, GithubIcon, LinkedInIcon } from '@/components/Icons';
 import { useWindowScroll } from '@/hooks/useWindowScroll';
 import { clsx } from 'clsx';
+import { useIsMobile } from '@/hooks/useIsMobile';
+import { useState } from 'react';
 
 const Header = () => {
   const [scroll] = useWindowScroll();
+  const isMobile = useIsMobile();
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   return (
     <header
@@ -18,16 +22,58 @@ const Header = () => {
       <div className={styles.navbar}>
         <div className={styles.container}>
           <div className={styles.title}>
-            <a>Yoann TERUEL</a>
-            <span>Work in progress</span>
+            <a href="/">Yoann TERUEL</a>
           </div>
           <div className={styles.content}>
-            <nav className={styles.navbarMenu}>
-              <a href="#about-me">About me</a>
-              <a href="#showcase">Showcase</a>
-              <a>Other projects</a>
-              <a>Blog</a>
-              <a>Resume</a>
+            {isMobile ? (
+              <button
+                className={styles.burger}
+                onClick={() => setMenuIsOpen(!menuIsOpen)}
+              >
+                <BurgerIcon />
+              </button>
+            ) : (
+              <>
+                <nav className={styles.navbarMenu}>
+                  <a href="#about-me">About me</a>
+                  <a href="#showcase">Showcase</a>
+                  <a>Other projects</a>
+                  <a>Blog</a>
+                  <a>Resume</a>
+                </nav>
+                <div className={styles.socialLinks}>
+                  <a
+                    href="https://github.com/yteruel31"
+                    target="_blank"
+                    aria-label="visit my github profile"
+                  >
+                    <GithubIcon />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/yoann-teruel"
+                    target="_blank"
+                    aria-label="visit my linkedin profile"
+                  >
+                    <LinkedInIcon />
+                  </a>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+      {menuIsOpen && (
+        <div className={styles.naveScreen}>
+          <div className={styles.naveScreen__container}>
+            <nav className={styles.naveScreen__container__menu}>
+              <a href="#about-me" onClick={() => setMenuIsOpen(false)}>
+                About me
+              </a>
+              <a href="#showcase" onClick={() => setMenuIsOpen(false)}>
+                Showcase
+              </a>
+              <a onClick={() => setMenuIsOpen(false)}>Other projects</a>
+              <a onClick={() => setMenuIsOpen(false)}>Blog</a>
             </nav>
             <div className={styles.socialLinks}>
               <a
@@ -47,7 +93,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </div>
+      )}
     </header>
   );
 };

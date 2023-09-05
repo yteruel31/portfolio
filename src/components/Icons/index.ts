@@ -8,4 +8,5 @@ export { default as JavascriptIcon } from './Javascript';
 export { default as TypescriptIcon } from './Typescript';
 export { default as NodeJsIcon } from './NodeJs';
 export { default as ReactIcon } from './React';
+export { default as BurgerIcon } from './Burger';
 export { default as StyledComponentsIcon } from './StyledComponents';
