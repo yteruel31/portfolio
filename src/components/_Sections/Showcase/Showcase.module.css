@@ -1,10 +1,18 @@
 .showcase {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
   margin-top: 65px;
+}
+
+.showcase::before {
+  content: '';
+  display: block;
+  height: calc(var(--navbar-height) + 40px);
+  visibility: hidden;
 }
 
 .projects {

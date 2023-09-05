@@ -13,8 +13,8 @@ interface ShowcaseProps {
 
 const Showcase = ({ projects }: ShowcaseProps) => {
   return (
-    <div className={styles.showcase}>
-      <Section threshold={0.35} id="showcase">
+    <div className={styles.showcase} id="showcase">
+      <Section threshold={0.35}>
         <Title>Showcase</Title>
         <div className={styles.projects}>
           {projects

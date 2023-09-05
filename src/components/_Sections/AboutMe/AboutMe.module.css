@@ -1,10 +1,18 @@
 .aboutMe {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: min(88%, 125rem);
   margin: 0 auto;
+}
+
+.aboutMe::before {
+  content: '';
+  display: block;
+  height: calc(var(--navbar-height) + 40px);
+  visibility: hidden;
 }
 
 .aboutMe__content {

@@ -20,8 +20,8 @@ const firaCode = Fira_Code({ subsets: ['latin'] });
 
 const AboutMe = () => {
   return (
-    <div className={styles.aboutMe}>
-      <Section threshold={0.35} id="about-me">
+    <div className={styles.aboutMe} id="about-me">
+      <Section threshold={0.35}>
         <Title>About Me</Title>
         <div className={styles.aboutMe__content}>
           <div className={styles.aboutMe__content__image}>
