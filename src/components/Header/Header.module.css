@@ -135,7 +135,7 @@
 
 @media (min-width: 768px) {
   .socialLinks {
-    justify-content: flex-start;
+    justify-content: normal;
     margin-top: 0;
   }
 
