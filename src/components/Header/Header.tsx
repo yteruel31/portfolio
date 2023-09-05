@@ -83,7 +83,7 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <Transition in={menuIsOpen} timeout={150}>
+          <Transition in={menuIsOpen} timeout={150} unmountOnExit>
             {(state) => (
               <div
                 className={clsx(
