@@ -11,7 +11,8 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Yoann Teruel - Frontend developer',
-  description: "Yoann Teruel's Portfolio website",
+  description:
+    'I like to create modern web applications with love and incorporate popular libraries and frameworks such as React & Next.js.',
 };
 
 export default function RootLayout({
