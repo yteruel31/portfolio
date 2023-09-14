@@ -10,7 +10,7 @@ const getProjects = async () =>
   await request<Project[]>({
     query: gql`
       query {
-        allProjects(first: "3") {
+        allProjects(first: "3", orderBy: order_ASC) {
           demourl
           description
           inprogress
