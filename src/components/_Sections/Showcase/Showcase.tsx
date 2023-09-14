@@ -28,13 +28,37 @@ const Showcase = ({ projects }: ShowcaseProps) => {
                   <div className={styles.project__card__content__text}>
                     <h3>{project.name}</h3>
                     <p>{project.description}</p>
-                    <span className={firaCode.className}>
-                      Stacks:{' '}
-                      {project.stacks.map((stack) => stack.name).join(', ')}
-                    </span>
-                    <a href={project.repositoryurl} target="_blank">
-                      View project
-                    </a>
+                    <div
+                      className={
+                        styles.project__card__content__additional__text
+                      }
+                    >
+                      <span className={firaCode.className}>
+                        Stacks:{' '}
+                        {project.stacks.map((stack) => stack.name).join(', ')}
+                      </span>
+                      {project.inprogress && (
+                        <div>
+                          <span
+                            className={
+                              styles.project__card__content__inprogress
+                            }
+                          >
+                            Work in progress
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                    <div className={styles.project__card__content__links}>
+                      <a href={project.repositoryurl} target="_blank">
+                        View project
+                      </a>
+                      {project.demourl && (
+                        <a href={project.demourl} target="_blank">
+                          Demo
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </article>
               </div>
