@@ -102,6 +102,14 @@ const Header = () => {
                     <a href="#showcase" onClick={() => setMenuIsOpen(false)}>
                       Showcase
                     </a>
+                    <a
+                      href="/resume.pdf"
+                      target="_blank"
+                      rel="nonreferrer"
+                      onClick={() => setMenuIsOpen(false)}
+                    >
+                      Resume
+                    </a>
                   </nav>
                   <div className={styles.socialLinks}>
                     <a
