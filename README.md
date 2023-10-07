@@ -1,5 +1,7 @@
 # Yoann TERUEL Portfolio
 
+<div align="center"><img src="./overview.gif" width=700 alt="image of desktop preview of markdown editor"></div>
+
 This is my portfolio, it's a simple website to present my work and my skills.
 
 I would like to thank [Jorge A. Mendoza](https://www.jorgemendozadev.com/) for the inspiration.
