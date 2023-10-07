@@ -58,7 +58,9 @@ const Header = () => {
                     <nav className={styles.navbarMenu}>
                       <a href="#about-me">About me</a>
                       <a href="#showcase">Showcase</a>
-                      <a>Resume</a>
+                      <a href="/resume.pdf" target="_blank" rel="nonreferrer">
+                        Resume
+                      </a>
                     </nav>
                     <div className={styles.socialLinks}>
                       <a
