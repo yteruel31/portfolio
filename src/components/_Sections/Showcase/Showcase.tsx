@@ -37,7 +37,7 @@ const Showcase = ({ projects }: ShowcaseProps) => {
                         Stacks:{' '}
                         {project.stacks.map((stack) => stack.name).join(', ')}
                       </span>
-                      {Boolean(project.inprogress) && (
+                      {project.inprogress ? (
                         <div>
                           <span
                             className={
@@ -47,6 +47,8 @@ const Showcase = ({ projects }: ShowcaseProps) => {
                             Work in progress
                           </span>
                         </div>
+                      ) : (
+                        <></>
                       )}
                     </div>
                     <div className={styles.project__card__content__links}>
