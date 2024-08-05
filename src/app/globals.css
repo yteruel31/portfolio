@@ -45,6 +45,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 7vw;
 }
 
 html,
@@ -56,6 +57,7 @@ body {
 body {
   color: var(--c-foreground-1);
   background: var(--c-background);
+  font-family: var(--font-mono);
 }
 
 a {

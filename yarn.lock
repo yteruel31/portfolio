@@ -607,6 +607,14 @@ datocms-structured-text-generic-html-renderer@^4.0.1:
   dependencies:
     datocms-structured-text-utils "^4.0.1"
 
+datocms-structured-text-to-plain-text@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/datocms-structured-text-to-plain-text/-/datocms-structured-text-to-plain-text-4.0.1.tgz#3ded211ee1bf843ccd9c32535f6b585e1158699f"
+  integrity sha512-e5KXoCGtawu7dTm53LP5Jd/pZJS38WGUKnawl7NHPXUR+/xkBVIrpYyhZxjBJGz0YGJHfG4htQPBqSnJZZd9Sg==
+  dependencies:
+    datocms-structured-text-generic-html-renderer "^4.0.1"
+    datocms-structured-text-utils "^4.0.1"
+
 datocms-structured-text-utils@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/datocms-structured-text-utils/-/datocms-structured-text-utils-4.0.1.tgz#616f6c76c133adae256a5793df8148be2d5f3297"

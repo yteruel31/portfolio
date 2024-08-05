@@ -3,12 +3,13 @@ import styles from './Hero.module.css';
 import { clsx } from 'clsx';
 import { LocationIcon } from '@/components/Icons';
 import Button from '@/components/Button/Button';
+import Container from '@/components/Container/Container';
 
 const Hero = () => {
   return (
     <div className={styles.hero}>
-      <Section threshold={0.35} container={false}>
-        <section className={styles.container}>
+      <Container>
+        <Section threshold={0.35} container={false}>
           <div className={styles.hero__content}>
             <p className={styles.hero__content__intro}>Hi 👋 I&#39;m...</p>
             <h1 className={clsx(styles.hero__content__title)}>
@@ -31,8 +32,8 @@ const Hero = () => {
               <Button href="#about-me">About me</Button>
             </div>
           </div>
-        </section>
-      </Section>
+        </Section>
+      </Container>
     </div>
   );
 };

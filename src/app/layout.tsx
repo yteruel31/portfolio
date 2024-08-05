@@ -7,7 +7,7 @@ import styles from './layout.module.css';
 import React from 'react';
 import Footer from '@/components/Footer/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 export const metadata: Metadata = {
   title: 'Yoann Teruel - Frontend developer',

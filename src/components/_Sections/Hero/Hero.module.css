@@ -5,12 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: min(88%, 125rem);
-  margin: auto;
-}
-
-.container {
-  max-width: 1152px;
 }
 
 .hero__content {

@@ -4,8 +4,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: min(88%, 125rem);
-  margin: 0 auto;
 }
 
 .aboutMe::before {
