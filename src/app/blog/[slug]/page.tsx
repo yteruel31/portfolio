@@ -27,6 +27,10 @@ const getArticle = async (slug: string) =>
           category {
             name
           }
+          seo {
+            description
+            title
+          }
           content {
             value
             blocks {
@@ -54,6 +58,19 @@ const getArticle = async (slug: string) =>
       }
     `,
   });
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const article = await getArticle(params.slug);
+
+  return {
+    title: article.data['article'].seo.title + ' | Yoann TERUEL',
+    description: article.data['article'].seo.title,
+  };
+}
 
 export default async function Article({
   params,
