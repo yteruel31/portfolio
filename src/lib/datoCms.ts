@@ -13,12 +13,13 @@ interface RequestResult<T> {
 export const request = async <T extends object>({
   query,
   variables = {},
-  includeDrafts = false,
 }: PerformRequestProps): Promise<RequestResult<T>> => {
   const response = await fetch('https://graphql.datocms.com/', {
     headers: {
       Authorization: `Bearer ${process.env.DATOCMS_READONLY_TOKEN}`,
-      ...(includeDrafts ? { 'X-Include-Drafts': 'true' } : {}),
+      ...(process.env.NODE_ENV === 'development'
+        ? { 'X-Include-Drafts': 'true' }
+        : {}),
     },
     method: 'POST',
     body: JSON.stringify({ query, variables }),

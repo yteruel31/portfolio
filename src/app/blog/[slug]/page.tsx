@@ -7,10 +7,16 @@ import {
   ResponsiveImageType,
   StructuredText,
 } from 'react-datocms';
-import { isHeading, isLink, isParagraph } from 'datocms-structured-text-utils';
+import {
+  isCode,
+  isHeading,
+  isLink,
+  isParagraph,
+} from 'datocms-structured-text-utils';
 import { render as toPlainText } from 'datocms-structured-text-to-plain-text';
 import styles from './page.module.css';
 import Title from '@/components/Title/Title';
+import { SyntaxHighlight } from '@/components/SyntaxHighlight/SyntaxHighlight';
 
 const getArticle = async (slug: string) =>
   await request<Article>({
@@ -141,6 +147,15 @@ export default async function Article({
                   );
                 },
               ),
+              renderNodeRule(isCode, ({ node, key }) => {
+                return (
+                  <SyntaxHighlight
+                    key={key}
+                    code={node.code}
+                    language={node.language || 'plaintext'}
+                  />
+                );
+              }),
               renderNodeRule(
                 isLink,
                 ({ adapter: { renderNode }, node, children, key }) => {
