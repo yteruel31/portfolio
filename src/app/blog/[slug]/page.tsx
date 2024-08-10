@@ -175,6 +175,7 @@ export default async function Article({
                       key,
                       className: styles.article_container__a,
                       href: node.url,
+                      target: '_blank',
                     },
                     children,
                   );
