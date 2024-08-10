@@ -7,5 +7,9 @@ export type Article = {
   };
   slug: string;
   content: any;
-  seo: { title: string; description: string };
+  seo: {
+    title: string;
+    description: string;
+    image: { url: string; width: number; height: number };
+  };
 };

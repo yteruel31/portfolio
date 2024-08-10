@@ -17,6 +17,7 @@ import { render as toPlainText } from 'datocms-structured-text-to-plain-text';
 import styles from './page.module.css';
 import Title from '@/components/Title/Title';
 import { SyntaxHighlight } from '@/components/SyntaxHighlight/SyntaxHighlight';
+import { Metadata } from 'next';
 
 const getArticle = async (slug: string) =>
   await request<Article>({
@@ -36,6 +37,11 @@ const getArticle = async (slug: string) =>
           seo {
             description
             title
+            image {
+              url
+              width
+              height
+            }
           }
           content {
             value
@@ -69,12 +75,16 @@ export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
-}) {
+}): Promise<Metadata> {
   const article = await getArticle(params.slug);
+  const { title, description, image } = article.data['article'].seo;
 
   return {
-    title: article.data['article'].seo.title + ' | Yoann TERUEL',
-    description: article.data['article'].seo.title,
+    title: title + ' | Yoann TERUEL',
+    description,
+    openGraph: {
+      images: [{ url: image.url, width: image.width, height: image.height }],
+    },
   };
 }
 
