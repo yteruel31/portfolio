@@ -83,7 +83,7 @@ export async function generateMetadata({
     title: title + ' | Yoann TERUEL',
     description,
     openGraph: {
-      images: [{ url: image.url, width: image.width, height: image.height }],
+      images: [{ url: image?.url, width: image?.width, height: image?.height }],
     },
   };
 }
