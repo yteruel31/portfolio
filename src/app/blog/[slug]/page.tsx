@@ -1,6 +1,6 @@
 import { request } from '@/lib/datoCms';
 import { gql } from 'graphql-request';
-import { Article } from '@/models/article';
+import type { Article } from '@/models/article';
 import {
   Image,
   renderNodeRule,
@@ -74,9 +74,10 @@ const getArticle = async (slug: string) =>
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const article = await getArticle(params.slug);
+  const { slug } = await params;
+  const article = await getArticle(slug);
   const { title, description, image } = article.data['article'].seo;
 
   return {
@@ -91,9 +92,10 @@ export async function generateMetadata({
 export default async function Article({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const article = await getArticle(params.slug);
+  const { slug } = await params;
+  const article = await getArticle(slug);
 
   return (
     <main className={styles.main}>

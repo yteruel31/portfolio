@@ -15,6 +15,7 @@ export const request = async <T extends object>({
   variables = {},
 }: PerformRequestProps): Promise<RequestResult<T>> => {
   const response = await fetch('https://graphql.datocms.com/', {
+    next: { revalidate: 3600 },
     headers: {
       Authorization: `Bearer ${process.env.DATOCMS_READONLY_TOKEN}`,
       ...(process.env.NODE_ENV === 'development'

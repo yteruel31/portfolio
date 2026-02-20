@@ -5,13 +5,14 @@ import { GithubIcon, LinkedInIcon } from '@/components/Icons';
 import { Transition } from 'react-transition-group';
 import { useWindowScroll } from '@/hooks/useWindowScroll';
 import { clsx } from 'clsx';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Device from '@/components/Device';
 import Link from 'next/link';
 
 const Header = () => {
   const [scroll] = useWindowScroll();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   return (
     <Device>
@@ -85,9 +86,10 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <Transition in={menuIsOpen} timeout={150} unmountOnExit>
+          <Transition nodeRef={menuRef} in={menuIsOpen} timeout={150} unmountOnExit>
             {(state) => (
               <div
+                ref={menuRef}
                 className={clsx(
                   styles.naveScreen,
                   (state == 'entering' || state === 'entered') &&
